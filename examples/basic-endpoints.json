@@ -1,0 +1,59 @@
+{
+  "prefix": "/api",
+  "globalDelay": 20,
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/health",
+      "response": {
+        "status": "healthy",
+        "timestamp": "{{timestamp}}",
+        "isoDate": "{{isoDate}}"
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/users/:id",
+      "response": {
+        "id": "{{params.id}}",
+        "name": "{{faker.name}}",
+        "email": "{{faker.email}}",
+        "company": "{{faker.company}}"
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/auth/login",
+      "status": 200,
+      "response": {
+        "token": "tok_{{faker.uuid}}",
+        "user": {
+          "email": "{{body.email}}"
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/flaky-service",
+      "errorRate": 0.5,
+      "errorStatus": 503,
+      "errorResponse": {
+        "error": "Service temporarily unavailable (flaky simulation)"
+      },
+      "response": {
+        "success": true,
+        "message": "You got lucky!"
+      }
+    }
+  ],
+  "resources": [
+    {
+      "name": "posts",
+      "path": "/posts",
+      "generate": {
+        "schema": "post",
+        "count": 5
+      }
+    }
+  ]
+}

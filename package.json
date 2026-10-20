@@ -1,0 +1,53 @@
+{
+  "name": "mock-endpoint-runner",
+  "version": "1.0.0",
+  "description": "A lightweight zero-dependency local HTTP API mock server and fixture generator for frontend and integration testing",
+  "main": "./src/index.js",
+  "module": "./src/index.js",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.js",
+    "./faker": "./src/faker.js",
+    "./router": "./src/router.js",
+    "./server": "./src/server.js",
+    "./parser": "./src/parser.js",
+    "./template": "./src/template.js",
+    "./crud": "./src/crud.js"
+  },
+  "bin": {
+    "mock-endpoint-runner": "./bin/mock-endpoint-runner.js"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.js",
+    "start": "node ./bin/mock-endpoint-runner.js serve"
+  },
+  "keywords": [
+    "mock",
+    "mock-server",
+    "api-mock",
+    "fixtures",
+    "fixture-generator",
+    "testing",
+    "integration-testing",
+    "frontend-testing",
+    "zero-dependency",
+    "local-development",
+    "rest-api",
+    "faker"
+  ],
+  "author": "slopggobblercobbler81",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/slopggobblercobbler81/mock-endpoint-runner.git"
+  },
+  "bugs": {
+    "url": "https://github.com/slopggobblercobbler81/mock-endpoint-runner/issues"
+  },
+  "homepage": "https://github.com/slopggobblercobbler81/mock-endpoint-runner#readme",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}

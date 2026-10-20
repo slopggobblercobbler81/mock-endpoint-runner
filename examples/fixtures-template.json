@@ -1,0 +1,16 @@
+{
+  "userProfile": {
+    "id": "{{faker.uuid}}",
+    "fullName": "{{faker.name}}",
+    "email": "{{faker.email}}",
+    "role": "admin",
+    "phone": "{{faker.phone}}",
+    "age": "{{faker.integer(21, 65)}}",
+    "verified": "{{faker.boolean}}",
+    "address": {
+      "city": "{{faker.city}}",
+      "country": "{{faker.country}}",
+      "street": "{{faker.streetAddress}}"
+    }
+  }
+}

@@ -1,0 +1,26 @@
+prefix: /v1
+globalDelay: 10
+routes:
+  - method: GET
+    path: /status
+    response:
+      status: online
+      version: 1.0.0
+  - method: GET
+    path: /products/:id
+    response:
+      id: "{{params.id}}"
+      name: "{{faker.product.name}}"
+      price: "{{faker.float(10, 200, 2)}}"
+      category: Gear
+  - method: POST
+    path: /checkout
+    status: 201
+    response:
+      orderId: "{{faker.uuid}}"
+      status: confirmed
+      charged: "{{body.amount}}"
+resources:
+  - name: users
+    path: /users
+    count: 10
